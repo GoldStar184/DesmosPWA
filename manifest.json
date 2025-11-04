@@ -4,7 +4,7 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#1a73e8",
+  "theme_color": "#00ac1c",
   "icons": [
     {
       "src": "https://www.desmos.com/assets/pwa/icon-192x192.png",
