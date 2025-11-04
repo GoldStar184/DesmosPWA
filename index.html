@@ -6,11 +6,10 @@
     </head>
 
     <body>
-        <div id="calculator" style="height: 100%; width: 100%; box-sizing: border-box;"></div>
+        <div id="calculator" style="position: fixed; left:0; top:0; right:0; bottom:0;"></div>
         <script>
             var elt = document.getElementById('calculator');
-            var calculator = Desmos.GraphingCalculator(elt);
-        </script>
+            var calculator = Desmos.GraphingCalculator(elt, {authorFeatures: true, actions: true, enableRepeatFunction: true, showEvaluationCopyButtons: true, pasteGraphLink: true, border: false});        </script>
     </body>
 </html>
 
