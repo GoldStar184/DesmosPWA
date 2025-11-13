@@ -34,11 +34,19 @@
             });
             // Request persistent storage for site
             if (navigator.storage && navigator.storage.persist) {
-                const isPersisted = await navigator.storage.persisted();
-                if (!isPersisted){
-                    isPersisted = await navigator.storage.persist();
-                } 
-                console.log(`Persisted storage granted: ${isPersisted}`);
+                navigator.storage.persisted().then(isPersisted => {
+                    if (!isPersisted) {
+                        navigator.storage.persist().then(granted => {
+                            if (granted) {
+                                console.log(`Persisted storage granted: ${granted}`);
+                            } else {
+                                console.warn("Warning: Persisted storage was NOT granted.");
+                            }
+                        });
+                    } else {
+                        console.log(`Persisted storage already granted: ${isPersisted}`);
+                    }
+                });
             }
         </script>
     </body>
